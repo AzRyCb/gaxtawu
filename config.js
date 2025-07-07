@@ -11,7 +11,7 @@ global.config = {
         prefix: /^[°•π÷×¶∆£¢€¥®™+✓_=|/~!?@#%^&.©^]/i, // Karakter awalan perintah yang diizinkan
         phoneNumber: "6283839203081", // Nomor telepon bot (Tidak perlu diisi jika menggunakan QR code)
         thumbnail: "https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=smurfs-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text=Neu-WaBot", // Gambar thumbnail bot
-        groupJid: "120363391379200206@g.us", // JID untuk group bot (Opsional, jika tidak menggunakan requireBotGroupMembership)
+        groupJid: "120363403451072024@g.us", // JID untuk group bot (Opsional, jika tidak menggunakan requireBotGroupMembership)
         newsletterJid: "120363370002595070@newsletter", // JID untuk saluran bot
 
         // Konfigurasi autentikasi sesi bot
@@ -72,7 +72,7 @@ global.config = {
 
     // Informasi owner bot
     owner: {
-        name: "Ariff [U.C]", // Nama owner bot
+        name: "Ariff | Founder [U.C]", // Nama owner bot
         organization: "Unity Central", // Nama organisasi owner bot
         id: "6281313918102", // Nomor telepon owner bot
         co: ["6283879175089"] // Nomor co-owner bot
@@ -80,8 +80,8 @@ global.config = {
 
     // Stiker bot
     sticker: {
-        packname: "", // Nama paket stiker
-        author: "gaxtawu <github.com/itsreimau/gaxtawu>" // Pembuat stiker
+        packname: "By", // Nama paket stiker
+        author: "Neu-WaBot - s.id/unity_central" // Pembuat stiker
     },
 
     // Sistem bot
@@ -104,7 +104,7 @@ global.config = {
         timeZone: "Asia/Jakarta", // Zona waktu bot
         unavailableAtNight: false, // Bot tidak tersedia pada malam hari, dari jam 12 malam sampai 6 pagi (Waktu akan disesuaikan menurut timeZone)
         uploaderHost: "Cloudku", // Host uploader untuk menyimpan media (Tersedia: Catbox, Cloudku, Erhabot, FastUrl, IDNet, Litterbox, Nyxs, Pomf, Quax, Ryzen, Shojib, TmpErhabot, Uguu, Videy)
-        useCoin: false, // Pakai koin
+        useCoin: true, // Pakai koin
         usePairingCode: true, // Pakai kode pairing untuk koneksi
         customPairingCode: "PAIRCODE", // Kode pairing kustom untuk koneksi (Opsional, jika menggunakan QR code, jika kosong kode pairing akan random)
         useServer: false // Jalankan bot dengan server
