@@ -86,7 +86,7 @@ global.config = {
 
     // Sistem bot
     system: {
-        alwaysOnline: false, // Bot selalu berstatus "online"
+        alwaysOnline: true, // Bot selalu berstatus "online"
         antiCall: true, // Bot secara otomatis membanned orang yang menelepon
         autoMention: true, // Bot otomatis mention seseorang dalam pesan yang dikirim
         autoAiLabel: true, // Bot otomatis memamaki label AI dalam pesan yang dikirim (Hanya berfungsi di chat private)
