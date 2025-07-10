@@ -47,10 +47,10 @@ async function checkQuotedMedia(type, required) {
         audio: type.audioMessage,
         document: type.documentMessage || type.documentWithCaptionMessage,
         gif: type.videoMessage,
-        image: type.imageMessage,
+        image: type.imageMessage || type.buttonsMessage?.imageMessage,
         sticker: type.stickerMessage,
         text: type.conversation || type.extendedTextMessage?.text,
-        video: type.videoMessage
+        video: type.videoMessage || type.buttonsMessage?.videoMessage
     };
 
     const mediaList = Array.isArray(required) ? required : [required];
@@ -231,19 +231,35 @@ async function translate(text, language) {
     }
 }
 
-async function upload(buffer, type = "any", host = config.system.uploaderHost) {
+async function upload(buffer, type = "any", host = null) {
     if (!buffer) return null;
 
     const hostMap = {
-        any: ["Cloudku", "FastUrl", "Uguu", "Catbox", "Litterbox"],
+        any: ["FastUrl", "Uguu", "Catbox", "Litterbox", "Cloudku"],
         image: ["Quax", "Ryzumi", "Pomf"],
         video: ["Quax", "Ryzumi", "Pomf", "Videy"],
         audio: ["Quax", "Ryzumi", "Pomf"],
         doc: []
     };
 
-    const toTry = host && hostMap.any.includes(host) ? [host, ...(hostMap[type] || [])] : hostMap[type] || [];
-    for (const h of toTry) {
+    if (host && hostMap.any.includes(host)) {
+        try {
+            const url = await uploader[host](buffer);
+            if (url) return url;
+        } catch {}
+    }
+
+    const typeHosts = hostMap[type] || [];
+    for (const h of typeHosts) {
+        try {
+            const url = await uploader[h](buffer);
+            if (url) return url;
+        } catch {}
+    }
+
+    for (const h of hostMap.any) {
+        if (h === host || typeHosts.includes(h)) continue;
+
         try {
             const url = await uploader[h](buffer);
             if (url) return url;

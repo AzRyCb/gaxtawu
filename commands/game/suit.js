@@ -7,7 +7,7 @@ module.exports = {
         group: true
     },
     code: async (ctx) => {
-        const accountJid = ctx?.quoted?.senderJid || ctx.msg.message?.[ctx.getMessageType()]?.contextInfo?.mentionedJid?.[0] || null;
+        const accountJid = ctx?.quoted?.senderJid || ctx.getMentioned()[0] || null;
         const accountId = ctx.getId(accountJid);
 
         const senderJid = ctx.sender.jid;
@@ -151,7 +151,7 @@ module.exports = {
                         game.choices.set(participantId, choiceData);
 
                         await ctx.sendMessage(participantJid, {
-                            text: formatter.quote(`Anda memilih: ${choiceData.name}`)
+                            text: formatter.quote(`Kamu memilih: ${choiceData.name}`)
                         }, {
                             quoted: m
                         });
