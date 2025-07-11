@@ -141,7 +141,7 @@ module.exports = (bot) => {
         const groupId = isGroup ? ctx.getId(groupJid) : null;
         const isOwner = tools.cmd.isOwner(senderId, m.key.id);
         const isCmd = tools.cmd.isCmd(m.content, ctx.bot);
-        const isAdmin = await ctx.group().isAdmin(senderJid);
+        const isAdmin = isGroup ? await ctx.group().isAdmin(senderJid) : false;
 
         // Mengambil database
         const botDb = await db.get("bot") || {};
@@ -149,8 +149,6 @@ module.exports = (bot) => {
         const groupDb = await db.get(`group.${groupId}`) || {};
 
         // Pengecekan mode bot (group, private, self)
-        if (groupDb?.mutebot === true && !isOwner && !isAdmin) return;
-        if (groupDb?.mutebot === "owner" && !isOwner) return;
         if (botDb?.mode === "group" && isPrivate && !isOwner && !userDb?.premium) return;
         if (botDb?.mode === "private" && isGroup && !isOwner && !userDb?.premium) return;
         if (botDb?.mode === "self" && !isOwner) return;
@@ -161,6 +159,8 @@ module.exports = (bot) => {
         if (hour >= 0 && hour < 6 && !isOwner && !userDb?.premium) return;
 
         // Pengecekan mute pada grup
+        if (groupDb?.mutebot === true && !isOwner && !isAdmin) return;
+        if (groupDb?.mutebot === "owner" && !isOwner) return;
         const muteList = groupDb?.mute || [];
         if (muteList.includes(senderId)) await ctx.deleteMessage(m.key);
 
