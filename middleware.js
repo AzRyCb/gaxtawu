@@ -58,10 +58,8 @@ module.exports = (bot) => {
                         buttonId: `${ctx.used.prefix}setprofile autolevelup`,
                         buttonText: {
                             displayText: "Nonaktifkan Autolevelup"
-                        },
-                        type: 1
-                    }],
-                    headerType: 1
+                        }
+                    }]
                 });
             }
 

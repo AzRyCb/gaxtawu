@@ -77,18 +77,15 @@ module.exports = {
                         buttonId: `${ctx.used.prefix}owner`,
                         buttonText: {
                             displayText: "Hubungi Owner"
-                        },
-                        type: 1
+                        }
                     },
                     {
                         buttonId: `${ctx.used.prefix}donate`,
                         buttonText: {
                             displayText: "Donasi"
-                        },
-                        type: 1
+                        }
                     }
-                ],
-                headerType: 1
+                ]
             }, {
                 quoted: tools.cmd.fakeMetaAiQuotedText(config.msg.note)
             });

@@ -37,15 +37,20 @@ module.exports = {
                     buttonId: "surrender",
                     buttonText: {
                         displayText: "Menyerah"
-                    },
-                    type: 1
-                }],
-                headerType: 1
+                    }
+                }]
             });
 
             const collector = ctx.MessageCollector({
                 time: game.timeout
             });
+
+            const playAgain = [{
+                buttonId: ctx.used.prefix + ctx.used.command,
+                buttonText: {
+                    displayText: "Main Lagi"
+                }
+            }];
 
             collector.on("collect", async (m) => {
                 const participantAnswer = m.content.toLowerCase();
@@ -69,7 +74,9 @@ module.exports = {
                             await db.add(`user.${participant}.winGame`, 1);
                         }
                         await ctx.sendMessage(ctx.id, {
-                            text: formatter.quote(`🎉 Selamat! Semua jawaban telah terjawab! Setiap anggota yang menjawab mendapat ${game.coin.allAnswered} koin.`)
+                            text: formatter.quote(`🎉 Selamat! Semua jawaban telah terjawab! Setiap anggota yang menjawab mendapat ${game.coin.allAnswered} koin.`),
+                            footer: config.msg.footer,
+                            buttons: playAgain
                         }, {
                             quoted: m
                         });
@@ -80,7 +87,9 @@ module.exports = {
                     session.delete(ctx.id);
                     await ctx.sendMessage(ctx.id, {
                         text: `${formatter.quote("🏳️ Kamu menyerah!")}\n` +
-                            formatter.quote(`Jawaban yang belum terjawab adalah ${remaining}.`)
+                            formatter.quote(`Jawaban yang belum terjawab adalah ${remaining}.`),
+                        footer: config.msg.footer,
+                        buttons: playAgain
                     }, {
                         quoted: m
                     });
@@ -99,10 +108,12 @@ module.exports = {
 
                 if (session.has(ctx.id)) {
                     session.delete(ctx.id);
-                    return await ctx.reply(
-                        `${formatter.quote("⏱ Waktu habis!")}\n` +
-                        formatter.quote(`Jawaban yang belum terjawab adalah ${remaining}`)
-                    );
+                    return await ctx.reply({
+                        text: `${formatter.quote("⏱ Waktu habis!")}\n` +
+                            formatter.quote(`Jawaban yang belum terjawab adalah ${remaining}`),
+                        footer: config.msg.footer,
+                        buttons: playAgain
+                    });
                 }
             });
         } catch (error) {

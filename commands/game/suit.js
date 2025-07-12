@@ -7,7 +7,7 @@ module.exports = {
         group: true
     },
     code: async (ctx) => {
-        const accountJid = ctx?.quoted?.senderJid || ctx.getMentioned()[0] || null;
+        const accountJid = ctx.getMentioned()[0] || ctx?.quoted?.senderJid || null;
         const accountId = ctx.getId(accountJid);
 
         const senderJid = ctx.sender.jid;
@@ -44,16 +44,13 @@ module.exports = {
                     buttonId: "accept",
                     buttonText: {
                         displayText: "Terima"
-                    },
-                    type: 1
+                    }
                 }, {
                     buttonId: "reject",
                     buttonText: {
                         displayText: "Tolak"
-                    },
-                    type: 1
-                }],
-                headerType: 1
+                    }
+                }]
             });
 
             session.set(senderJid, game);
@@ -86,36 +83,31 @@ module.exports = {
                                 buttonId: "batu",
                                 buttonText: {
                                     displayText: "Batu"
-                                },
-                                type: 1
+                                }
                             },
                             {
                                 buttonId: "kertas",
                                 buttonText: {
                                     displayText: "Kertas"
-                                },
-                                type: 1
+                                }
                             },
                             {
                                 buttonId: "gunting",
                                 buttonText: {
                                     displayText: "Gunting"
-                                },
-                                type: 1
+                                }
                             }
                         ];
 
                         await ctx.sendMessage(senderJid, {
                             text: choiceText,
                             footer: config.msg.footer,
-                            buttons,
-                            headerType: 1
+                            buttons
                         });
                         await ctx.sendMessage(accountJid, {
                             text: choiceText,
                             footer: config.msg.footer,
-                            buttons,
-                            headerType: 1
+                            buttons
                         });
                     } else if (participantAnswer === "reject") {
                         session.delete(senderJid);

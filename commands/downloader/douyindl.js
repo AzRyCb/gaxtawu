@@ -33,7 +33,6 @@ module.exports = {
                 footer: config.msg.footer,
                 interactiveButtons: []
             });
-
             if (result.slide && result.media) {
                 const album = result.media.map(imageUrl => ({
                     image: {
@@ -42,10 +41,10 @@ module.exports = {
                     mimetype: tools.mime.lookup("jpeg")
                 }));
 
-                return await ctx.reply({
-                    album,
-                    caption: formatter.quote(`URL: ${url}`)
-                });
+                return await ctx.core.sendAlbumMessage(ctx.id,
+                    album, {
+                        quoted: ctx.msg
+                    });
             }
         } catch (error) {
             return await tools.cmd.handleError(ctx, error, true);

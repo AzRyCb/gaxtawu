@@ -33,15 +33,13 @@ module.exports = {
                 buttonId: "delete",
                 buttonText: {
                     displayText: "Hapus Menfess"
-                },
-                type: 1
+                }
             }];
 
             await ctx.sendMessage(`${targetId}@s.whatsapp.net`, {
                 text: menfessText,
                 footer: formatter.italic(`Setiap pesan yang kamu kirim akan diteruskan ke orang tersebut!`),
-                buttons,
-                headerType: 1
+                buttons
             }, {
                 quoted: tools.cmd.fakeMetaAiQuotedText("Seseorang telah mengirimi-mu menfess.")
             });
@@ -53,8 +51,7 @@ module.exports = {
             return await ctx.reply({
                 text: formatter.quote(`✅ Pesan berhasil terkirim!`),
                 footer: config.msg.footer,
-                buttons,
-                headerType: 1
+                buttons
             });
         } catch (error) {
             return await tools.cmd.handleError(ctx, error);

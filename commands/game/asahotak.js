@@ -30,21 +30,25 @@ module.exports = {
                     buttonId: "hint",
                     buttonText: {
                         displayText: "Petunjuk"
-                    },
-                    type: 1
+                    }
                 }, {
                     buttonId: "surrender",
                     buttonText: {
                         displayText: "Menyerah"
-                    },
-                    type: 1
-                }],
-                headerType: 1
+                    }
+                }]
             });
 
             const collector = ctx.MessageCollector({
                 time: game.timeout
             });
+
+            const playAgain = [{
+                buttonId: ctx.used.prefix + ctx.used.command,
+                buttonText: {
+                    displayText: "Main Lagi"
+                }
+            }];
 
             collector.on("collect", async (m) => {
                 const participantAnswer = m.content.toLowerCase();
@@ -56,7 +60,9 @@ module.exports = {
                     await db.add(`user.${participantId}.winGame`, 1);
                     await ctx.sendMessage(ctx.id, {
                         text: `${formatter.quote("💯 Benar!")}\n` +
-                            formatter.quote(`+${game.coin} Koin`)
+                            formatter.quote(`+${game.coin} Koin`),
+                        footer: config.msg.footer,
+                        buttons: playAgain
                     }, {
                         quoted: m
                     });
@@ -72,7 +78,9 @@ module.exports = {
                     session.delete(ctx.id);
                     await ctx.sendMessage(ctx.id, {
                         text: `${formatter.quote("🏳️ Kamu menyerah!")}\n` +
-                            formatter.quote(`Jawabannya adalah ${tools.msg.ucwords(game.answer)}.`)
+                            formatter.quote(`Jawabannya adalah ${tools.msg.ucwords(game.answer)}.`),
+                        footer: config.msg.footer,
+                        buttons: playAgain
                     }, {
                         quoted: m
                     });
@@ -90,10 +98,12 @@ module.exports = {
                 if (session.has(ctx.id)) {
                     session.delete(ctx.id);
 
-                    return await ctx.reply(
-                        `${formatter.quote("⏱ Waktu habis!")}\n` +
-                        formatter.quote(`Jawabannya adalah ${tools.msg.ucwords(game.answer)}.`)
-                    );
+                    return await ctx.reply({
+                        text: `${formatter.quote("⏱ Waktu habis!")}\n` +
+                            formatter.quote(`Jawabannya adalah ${tools.msg.ucwords(game.answer)}.`),
+                        footer: config.msg.footer,
+                        buttons: playAgain
+                    });
                 }
             });
         } catch (error) {

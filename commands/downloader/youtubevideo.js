@@ -58,7 +58,6 @@ module.exports = {
                 footer: config.msg.footer,
                 interactiveButtons: []
             });
-
             return await ctx.reply({
                 video: {
                     url: result.downloadUrl

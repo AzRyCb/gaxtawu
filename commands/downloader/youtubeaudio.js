@@ -58,7 +58,6 @@ module.exports = {
                 footer: config.msg.footer,
                 interactiveButtons: []
             });
-
             return await ctx.reply({
                 audio: {
                     url: result.downloadUrl
