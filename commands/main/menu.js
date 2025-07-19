@@ -30,9 +30,6 @@ module.exports = {
 
             let text = `Halo @${ctx.getId(ctx.sender.jid)}, berikut adalah daftar perintah yang tersedia!\n` +
                 "\n" +
-                `${formatter.quote(`Bot Uptime: ${config.bot.uptime}`)}\n` +
-                `${formatter.quote(`Database: ${config.bot.dbSize} (Simpl.DB - JSON)`)}\n` +
-                "\n" +
                 `${formatter.italic("Jangan lupa berdonasi agar bot tetap online!")}\n` +
                 `${config.msg.readmore}\n`;
 
