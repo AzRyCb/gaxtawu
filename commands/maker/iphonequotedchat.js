@@ -6,7 +6,7 @@ module.exports = {
         coin: 10
     },
     code: async (ctx) => {
-        const input = ctx.args.join(" ") || ctx?.quoted?.content;
+        const input = ctx.args.join(" ") || ctx?.quoted?.content || null;
 
         if (!input) return await ctx.reply(
             `${formatter.quote(tools.msg.generateInstruction(["send"], ["text"]))}\n` +
@@ -17,7 +17,7 @@ module.exports = {
         if (input.length > 80) return await ctx.reply(formatter.quote("❎ Maksimal 80 kata!"));
 
         try {
-            const result = tools.api.createUrl("falcon", "/imagecreator/iqc", {
+            const result = tools.api.createUrl("hang", "/imagecreator/iqc", {
                 text: input
             });
 
