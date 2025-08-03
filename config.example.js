@@ -62,7 +62,7 @@ global.config = {
         unavailableAtNight: Formatter.quote("⛔ Bot tidak tersedia dari jam 12 malam sampai 6 pagi. Silakan kembali nanti!"), // Pesan jika tidak tersedia pada malam hari
 
         readmore: "\u200E".repeat(4001), // String read more
-        note: "“Lorem ipsum dolor sit amet, tenebris in umbra, vitae ad mortem.”", // Catatan
+        note: "Jangan lupa berdonasi, agar bot tetap online", // Catatan
         footer: Formatter.italic("Neu-WaBot By Unity Central"), // Footer di pesan bot
         wait: Formatter.quote("🔄 Tunggu sebentar..."), // Pesan loading
         notFound: Formatter.quote("❎ Tidak ada yang ditemukan! Coba lagi nanti."), // Pesan item tidak ditemukan
@@ -79,8 +79,8 @@ global.config = {
 
     // Stiker bot
     sticker: {
-        packname: "By", // Nama paket stiker
-        author: "Neu-WaBot - s.id/unity_central" // Pembuat stiker
+        packname: "Neu-WaBot", // Nama paket stiker
+        author: "https://s.id/unity_central" // Pembuat stiker
     },
 
     // Sistem bot
