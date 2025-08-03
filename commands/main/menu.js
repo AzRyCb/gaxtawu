@@ -30,13 +30,6 @@ module.exports = {
 
             let text = `Halo @${ctx.getId(ctx.sender.jid)}, berikut adalah daftar perintah yang tersedia!\n` +
                 "\n" +
-                `${formatter.quote(`Tanggal: ${moment.tz(config.system.timeZone).locale("id").format("dddd, DD MMMM YYYY")}`)}\n` +
-                `${formatter.quote(`Waktu: ${moment.tz(config.system.timeZone).format("HH.mm.ss")}`)}\n` +
-                "\n" +
-                `${formatter.quote(`Bot Uptime: ${config.bot.uptime}`)}\n` +
-                `${formatter.quote(`Database: ${config.bot.dbSize} (Simpl.DB - JSON)`)}\n` +
-                `${formatter.quote("Library: @itsreimau/gktw (Fork of @mengkodingan/ckptw)")}\n` +
-                "\n" +
                 `${formatter.italic("Jangan lupa berdonasi agar bot tetap online!")}\n` +
                 `${config.msg.readmore}\n`;
 
