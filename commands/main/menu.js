@@ -30,7 +30,6 @@ module.exports = {
 
             let text = `Halo @${ctx.getId(ctx.sender.jid)}, berikut adalah daftar perintah yang tersedia!\n` +
                 "\n" +
-                `${formatter.italic("Jangan lupa berdonasi agar bot tetap online!")}\n` +
                 `${config.msg.readmore}\n`;
 
             for (const category of Object.keys(tag)) {
