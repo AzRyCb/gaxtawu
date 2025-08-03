@@ -7,12 +7,12 @@ const {
 global.config = {
     // Informasi bot dasar
     bot: {
-        name: "GAXTAWU", // Nama bot
+        name: "Neu-WaBot", // Nama bot
         prefix: /^[°•π÷×¶∆£¢€¥®™+✓_=|/~!?@#%^&.©^]/i, // Karakter awalan untuk memanggil perintah
-        phoneNumber: "", // Nomor telepon bot (Tidak perlu diisi jika menggunakan QR code)
-        thumbnail: "https://repository-images.githubusercontent.com/753096396/84e76ef0-ba19-4c87-8ec2-ea803b097479", // Gambar thumbnail bot
-        groupJid: "", // JID untuk group bot (Tidak perlu diisi jika tidak menggunakan requireBotGroupMembership)
-        newsletterJid: "120363416372653441@newsletter", // JID untuk saluran bot
+        phoneNumber: "6283839203081", // Nomor telepon bot (Tidak perlu diisi jika menggunakan QR code)
+        thumbnail: "https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=smurfs-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text=Neu-WaBot", // Gambar thumbnail bot
+        groupJid: "120363403451072024@g.us", // JID untuk group bot (Opsional, jika tidak menggunakan requireBotGroupMembership)
+        newsletterJid: "120363370002595070@newsletter", // JID untuk saluran bot
 
         // Konfigurasi autentikasi sesi bot
         authAdapter: {
@@ -63,8 +63,7 @@ global.config = {
 
         readmore: "\u200E".repeat(4001), // String read more
         note: "“Lorem ipsum dolor sit amet, tenebris in umbra, vitae ad mortem.”", // Catatan
-        footer: Formatter.italic("Developed by ItsReimau with ❤"), // Catatan kaki
-
+        footer: Formatter.italic("Neu-WaBot By Unity Central"), // Footer di pesan bot
         wait: Formatter.quote("🔄 Tunggu sebentar..."), // Pesan loading
         notFound: Formatter.quote("❎ Tidak ada yang ditemukan! Coba lagi nanti."), // Pesan item tidak ditemukan
         urlInvalid: Formatter.quote("❎ URL tidak valid!") // Pesan jika URL tidak valid
@@ -72,16 +71,16 @@ global.config = {
 
     // Informasi owner bot
     owner: {
-        name: "", // Nama owner bot
-        organization: "", // Nama organisasi owner bot
-        id: "", // Nomor telepon owner bot
-        co: [""] // Nomor co-owner bot
+        name: "Ariff | Founder [U.C]", // Nama owner bot
+        organization: "Unity Central", // Nama organisasi owner bot
+        id: "6281313918102", // Nomor telepon owner bot
+        co: ["6283879175089"] // Nomor co-owner bot
     },
 
     // Stiker bot
     sticker: {
-        packname: "", // Nama paket stiker
-        author: "gaxtawu <github.com/itsreimau/gaxtawu>" // Pembuat stiker
+        packname: "By", // Nama paket stiker
+        author: "Neu-WaBot - s.id/unity_central" // Pembuat stiker
     },
 
     // Sistem bot
@@ -96,7 +95,7 @@ global.config = {
         port: 3000, // Port (Jika pakai server)
         reportErrorToOwner: true, // Laporkan error ke owner bot
         restrict: false, // Batasi akses perintah
-        requireBotGroupMembership: false, // Harus gabung grup bot
+        requireBotGroupMembership: true, // Harus gabung grup bot
         requireGroupSewa: false, // Harus sewa bot untuk bisa dipakai di grup
         selfOwner: false, // Bot jadi owner sendiri
         selfReply: true, // Bot bisa balas pesan bot sendiri
@@ -104,8 +103,8 @@ global.config = {
         unavailableAtNight: false, // Bot tidak tersedia pada malam hari, dari jam 12 malam sampai 6 pagi (Waktu akan disesuaikan menurut timeZone)
         uploaderHost: "FastUrl", // Host uploader untuk menyimpan media (Tersedia: Catbox, Cloudku, FastUrl, Litterbox, Pomf, Quax, Ryzumi, Uguu, Videy)
         useCoin: true, // Pakai koin
-        usePairingCode: false, // Pakai kode pairing untuk koneksi
-        customPairingCode: "UMBR4L15", // Kode pairing kustom untuk koneksi (Opsional, jika menggunakan QR code, jika kosong kode pairing akan random)
+        usePairingCode: true, // Pakai kode pairing untuk koneksi
+        customPairingCode: "PAIRCODE", // Kode pairing kustom untuk koneksi (Opsional, jika menggunakan QR code, jika kosong kode pairing akan random)
         useServer: false // Jalankan bot dengan server
     }
 };
