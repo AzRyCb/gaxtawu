@@ -63,7 +63,7 @@ global.config = {
 
         readmore: "\u200E".repeat(4001), // String read more
         note: "Jangan lupa berdonasi, agar bot tetap online", // Catatan
-        footer: Formatter.italic("Neu-WaBot By Unity Central"), // Footer di pesan bot
+        footer: Formatter.italic(""), // Footer di pesan bot
         wait: Formatter.quote("🔄 Tunggu sebentar..."), // Pesan loading
         notFound: Formatter.quote("❎ Tidak ada yang ditemukan! Coba lagi nanti."), // Pesan item tidak ditemukan
         urlInvalid: Formatter.quote("❎ URL tidak valid!") // Pesan jika URL tidak valid
