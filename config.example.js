@@ -7,12 +7,12 @@ const {
 global.config = {
     // Informasi bot dasar
     bot: {
-        name: "GAXTAWU", // Nama bot
+        name: "Neu-WaBot", // Nama bot
         prefix: /^[°•π÷×¶∆£¢€¥®™+✓_=|/~!?@#%^&.©^]/i, // Karakter awalan untuk memanggil perintah
-        phoneNumber: "", // Nomor telepon bot (Tidak perlu diisi jika menggunakan QR code)
-        thumbnail: "https://repository-images.githubusercontent.com/753096396/84e76ef0-ba19-4c87-8ec2-ea803b097479", // Gambar thumbnail bot
-        groupJid: "", // JID untuk group bot (Tidak perlu diisi jika tidak menggunakan requireBotGroupMembership)
-        newsletterJid: "120363416372653441@newsletter", // JID untuk saluran bot
+        phoneNumber: "6283192266361", // Nomor telepon bot (Tidak perlu diisi jika menggunakan QR code)
+        thumbnail: "https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=smurfs-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text=Neu-WaBot", // Gambar thumbnail bot
+        groupJid: "120363403451072024@g.us", // JID untuk group bot (Opsional, jika tidak menggunakan requireBotGroupMembership)
+        newsletterJid: "120363370002595070@newsletter", // JID untuk saluran bot
 
         // Konfigurasi autentikasi sesi bot
         authAdapter: {
@@ -63,9 +63,8 @@ global.config = {
         unavailableAtNight: Formatter.quote("⛔ Bot tidak tersedia dari jam 12 malam sampai 6 pagi. Silakan kembali nanti!"), // Pesan jika tidak tersedia pada malam hari
 
         readmore: "\u200E".repeat(4001), // String read more
-        note: "“Lorem ipsum dolor sit amet, tenebris in umbra, vitae ad mortem.”", // Catatan
-        footer: Formatter.italic("Developed by ItsReimau with ❤"), // Catatan kaki
-
+        note: "Jangan lupa berdonasi, agar bot tetap online", // Catatan
+        footer: Formatter.italic(""), // Footer di pesan bot
         wait: Formatter.quote("🔄 Tunggu sebentar..."), // Pesan loading
         notFound: Formatter.quote("❎ Tidak ada yang ditemukan! Coba lagi nanti."), // Pesan item tidak ditemukan
         urlInvalid: Formatter.quote("❎ URL tidak valid!") // Pesan jika URL tidak valid
@@ -73,32 +72,32 @@ global.config = {
 
     // Informasi owner bot
     owner: {
-        name: "", // Nama owner bot
-        organization: "", // Nama organisasi owner bot
-        id: "", // Nomor telepon owner bot
-        co: [""] // Nomor co-owner bot
+        name: "Ariff | Founder [U.C]", // Nama owner bot
+        organization: "Unity Central", // Nama organisasi owner bot
+        id: "6281313918102", // Nomor telepon owner bot
+        co: ["6283879175089"] // Nomor co-owner bot
     },
 
     // Stiker bot
     sticker: {
-        packname: "", // Nama paket stiker
-        author: "gaxtawu <github.com/itsreimau/gaxtawu>" // Pembuat stiker
+        packname: "Neu-WaBot", // Nama paket stiker
+        author: "https://s.id/unity_central" // Pembuat stiker
     },
 
     // Sistem bot
     system: {
         alwaysOnline: true, // Bot selalu berstatus "online"
         antiCall: true, // Bot secara otomatis membanned orang yang menelepon
-        autoRead: true, // Bot baca pesan otomatis
+        autoRead: false, // Bot baca pesan otomatis
         autoMention: true, // Bot otomatis mention seseorang dalam pesan yang dikirim
         autoAiLabel: true, // Bot otomatis menambahkan label AI dalam pesan yang dikirim
         autoTypingOnCmd: true, // Tampilkan status "sedang mengetik" saat memproses perintah
-        cooldown: 10 * 1000, // Jeda antar perintah (ms)
+        cooldown: 10000, // Jeda antar perintah (ms)
         maxListeners: 50, // Max listeners untuk events
         port: 3000, // Port (Jika pakai server)
-        privatePremiumOnly: false, // Pengguna bukan Premium tidak diperbolehkan menggunakan bot dalam percakapan pribadi
+        privatePremiumOnly: true, // Pengguna bukan Premium tidak diperbolehkan menggunakan bot dalam percakapan pribadi
         restrict: false, // Batasi akses perintah
-        requireBotGroupMembership: false, // Harus gabung grup bot
+        requireBotGroupMembership: true, // Harus gabung grup bot
         requireGroupSewa: false, // Harus sewa bot untuk bisa dipakai di grup
         reportErrorToOwner: true, // Laporkan error ke owner bot
         selfOwner: false, // Bot jadi owner sendiri
@@ -107,8 +106,8 @@ global.config = {
         unavailableAtNight: false, // Bot tidak tersedia pada malam hari, dari jam 12 malam sampai 6 pagi (Waktu akan disesuaikan menurut timeZone)
         uploaderHost: "FastUrl", // Host uploader untuk menyimpan media (Tersedia: Catbox, Cloudku, FastUrl, Litterbox, Pomf, Quax, Ryzumi, Uguu, Videy)
         useCoin: true, // Pakai koin
-        usePairingCode: false, // Pakai kode pairing untuk koneksi
-        customPairingCode: "UMBR4L15", // Kode pairing kustom untuk koneksi (Opsional, jika menggunakan QR code, jika kosong kode pairing akan random)
+        usePairingCode: true, // Pakai kode pairing untuk koneksi
+        customPairingCode: "PAIRCODE", // Kode pairing kustom untuk koneksi (Opsional, jika menggunakan QR code, jika kosong kode pairing akan random)
         useStore: false, // Store untuk menyimpan pesan masuk
         useServer: false // Jalankan bot dengan server
     }
