@@ -1,9 +1,9 @@
 {
   "bot": {
-    "name": "NIRWABOT",
-    "phoneNumber": "",
-    "thumbnail": "https://picsum.photos/1280/720",
-    "groupJid": ""
+    "name": "Neu-WaBot",
+    "phoneNumber": "6283879175089",
+    "thumbnail": "https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=smurfs-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text=Neu-WaBot",
+    "groupJid": "120363403451072024@g.us"
   },
   "msg": {
     "admin": "Hanya admin grup.",
@@ -21,16 +21,16 @@
     "restrict": "Dibatasi.",
     "ticket": "Tiket kurang. Tukar skor dulu.",
     "unavailableAtNight": "Bot offline jam 00.00–06.00.",
-    "footer": "Developed by ItsReimau with ♡",
+    "footer": "",
     "wait": "Tunggu...",
     "notFound": "Tidak ditemukan.",
     "error": "Terjadi kesalahan. Coba lagi atau hubungi owner.",
     "invalidUrl": "URL tidak valid."
   },
   "owner": {
-    "name": "Budi",
-    "organization": "PT. Pencari Cinta Sejati",
-    "id": ["62123456789@s.whatsapp.net", "123456789012345@lid"],
+    "name": "Ariff | Founder [U.C]",
+    "organization": "Unity Central",
+    "id": ["6281313918102@s.whatsapp.net", "123456789012345@lid"],
     "report": true,
     "co": [
       {
@@ -49,11 +49,11 @@
     ]
   },
   "sticker": {
-    "packname": "",
-    "author": "nirwabot <github.com/itsreimau/nirwabot>"
+    "packname": "Neu-WaBot",
+    "author": "https://s.id/unity_central"
   },
   "system": {
-    "alwaysOnline": true,
+    "alwaysOnline": false,
     "autoRead": true,
     "autoTypingOnCmd": true,
     "antiBot": false,
